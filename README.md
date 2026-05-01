@@ -52,10 +52,10 @@ After log transformation the distributions
   became much more spread out and readable, clearly showing differences between 
   the two classes for many features.
   
+<img width="557" height="370" alt="Screenshot 2026-05-01 at 1 21 19 AM" src="https://github.com/user-attachments/assets/2a28441c-f12f-463e-8159-b65169cd9b4b" />
 * A bar chart was plotted showing the class distribution, confirming the imbalance 
   of 77% no defect and 23% defect.
-<img width="557" height="370" alt="Screenshot 2026-05-01 at 1 21 19 AM" src="https://github.com/user-attachments/assets/2a28441c-f12f-463e-8159-b65169cd9b4b" />
-
+  
 ### Problem Formulation
 
 * Input: 21 numerical software code metrics (McCabe and Halstead complexity measures)
