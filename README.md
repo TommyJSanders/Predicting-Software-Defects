@@ -81,7 +81,6 @@ After log transformation the distributions
 * The following packages were used: pandas, numpy, matplotlib, scikit-learn, and xgboost.
 * Training times were fast; Logistic Regression and XGBoost trained in seconds, 
   Random Forest took slightly longer due to building 100 decision trees.
-* These models do not have traditional training curves (loss vs epoch)
 * Training was stopped automatically when the models converged. For Logistic 
   Regression, `max_iter=1000` was set to ensure convergence.
 * The main difficulty encountered was installing XGBoost on MacOS, which required 
