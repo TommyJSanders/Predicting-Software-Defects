@@ -11,13 +11,13 @@ to predict whether a C program module contains a defect or not. The features are
 derived from McCabe and Halstead complexity measures, which capture properties like 
 cyclomatic complexity, lines of code, and estimated programming effort.
 
-The approach in this repository formulates the problem as a binary classification 
+I approach the problem as a binary classification 
 task. I applied log transformation and StandardScaler to preprocess the data, and 
 compared the performance of three models: Logistic Regression, Random Forest, and 
 XGBoost. Class imbalance (77% no defect, 23% defect) was handled through class 
 weighting parameters in each model.
 
-Our best model was Logistic Regression, achieving an AUC of 0.7827 on the held out 
+The best model was Logistic Regression, achieving an AUC of 0.7827 on the held out 
 test set. At the time of writing, the best performance on Kaggle for this competition 
 is an AUC of approximately 0.79.
 ## Summary of Workdone
@@ -34,7 +34,7 @@ is an AUC of approximately 0.79.
     * Kaggle Test: 67,856 data points (no labels, used for submission)
     #### Preprocessing / Clean up
 
-* All 21 features are numerical, no categorical features, so no one-hot encoding was needed.
+* All 21 features are numerical, so no one-hot encoding was needed.
 * No missing values were found in the dataset.
 * Log transformation (`log1p`) was applied to all features to handle heavy right skew 
   and compress extreme outlier values. `log1p` was used instead of `log` because 
@@ -91,12 +91,11 @@ After log transformation the distributions
   * XGBoost: `n_estimators=100`, `scale_pos_weight=3.41`, `eval_metric="logloss"`
 ### Training
 
-* All models were trained on a personal MacBook using Python and Jupyter Notebook.
+* All models were trained on a MacBook using Python and Jupyter Notebook.
 * The following packages were used: pandas, numpy, matplotlib, scikit-learn, and xgboost.
 * Training times were fast; Logistic Regression and XGBoost trained in seconds, 
   Random Forest took slightly longer due to building 100 decision trees.
-* These models do not have traditional training curves (loss vs epoch) since they 
-  are not neural networks
+* These models do not have traditional training curves (loss vs epoch)
 * Training was stopped automatically when the models converged. For Logistic 
   Regression, `max_iter=1000` was set to ensure convergence.
 * The main difficulty encountered was installing XGBoost on MacOS, which required 
@@ -112,7 +111,7 @@ After log transformation the distributions
     This is important because missing a real bug is worse than a false alarm.
   * **F1 Score (defect class)** — balances precision and recall for the defect class.
 
-* Results sliced test set:
+* Results from test set taken from train.csv:
 
 <img width="446" height="504" alt="Screenshot 2026-05-01 at 1 32 19 AM" src="https://github.com/user-attachments/assets/74a550cc-d511-4b7a-b212-53a27c85805d" />
 
