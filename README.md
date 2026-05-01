@@ -144,16 +144,50 @@ After log transformation the distributions
 
 ### How to Reproduce Results
 
-*Clone repo and open defects.project.ipynb in Jupyter/Colab
-*Run all cells sequentially (~5 mins on CPU):
-*Loads train.csv/test.csv automatically
-*EDA: correlations, histograms, class imbalance plots
-*Preprocess: log1p() + StandardScaler() on 21 features
-*Train: Logistic/LR, Random Forest, XGBoost (60/20/20 split)
-*Evaluate: F1/AUC/ROC curves on val/test sets
-*Generate: submission.csv for Kaggle
-*Resources: Google Colab 
-Expected: Logistic Regression AUC=0.783 (test set), submission-ready
+* Clone repo and open defects.project.ipynb in Jupyter/Colab
+* Run all cells sequentially (~5 mins on CPU):
+* Loads train.csv/test.csv automatically
+* EDA: correlations, histograms, class imbalance plots
+* Preprocess: log1p() + StandardScaler() on 21 features
+* Train: Logistic/LR, Random Forest, XGBoost (60/20/20 split)
+* Evaluate: F1/AUC/ROC curves on val/test sets
+* Generate: submission.csv for Kaggle
+* Resources: Google Colab 
+* Expected: Logistic Regression AUC=0.783 (test set), submission-ready
+
+### Overview of files in repository
+
+* defects.project.ipynb: Complete end-to-end analysis. Loads data → EDA (correlations, histograms) → preprocess (log1p+StandardScaler) → trains Logistic Regression/Random Forest/XGBoost → evaluates F1/AUC/ROC → generates Kaggle submission.csv
+
+* train.csv: Training data (101,763 modules × 21 numeric code metrics + defects target 0/1)
+
+* test.csv: Test data for Kaggle submission (67,856 modules × id + 21 features)
+
+* submission.csv: Generated predictions (id + defects probabilities)
+
+* README.md: Project overview, reproduction instructions, results summary
+
+* Note: Single notebook is fully self-contained with markdown explanations, plots, and results for complete understanding without external docs.
+
+### Software Setup
+* The following packages were used: pandas, numpy, matplotlib, scikit-learn, and xgboost.
+* All of these packages can be installed using !pip install in an open jupyter notebook but for the xgboost package, I had to use brew install libomp
+
+### Data
+* You can dowload the datasets from the kaggle link at the top of the README. It contains the train.csv and the test.csv
+* Format: 21 numeric software metrics (McCabe/Halstead) + defects target (0/1, imbalanced 77/23)
+
+### Training and Performance Eval
+
+* The training and perfromance evaluation is found at the bottom of my defects.project.ipynb file. It shows code for the three models, as well as code for evaluating them.
+
+## Citations
+
+* (https://www.kaggle.com/competitions/playground-series-s3e23) 
+
+
+
+
  
 
   
