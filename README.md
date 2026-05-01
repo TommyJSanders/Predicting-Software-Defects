@@ -145,7 +145,7 @@ After log transformation the distributions
 ### How to Reproduce Results
 
 * Clone repo and open defects.project.ipynb in Jupyter/Colab
-* Run all cells sequentially (~5 mins on CPU):
+* Run all cells sequentially:
 * Loads train.csv/test.csv automatically
 * EDA: correlations, histograms, class imbalance plots
 * Preprocess: log1p() + StandardScaler() on 21 features
