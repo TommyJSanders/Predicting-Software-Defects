@@ -69,6 +69,7 @@ After log transformation the distributions
   `branchCount` (0.32), and `v(g)` (0.30), suggesting that larger and more complex 
   modules are more likely to contain defects.
 <img width="657" height="572" alt="Screenshot 2026-05-01 at 1 22 46 AM" src="https://github.com/user-attachments/assets/a31142bd-506b-40ad-b3a2-e2681b51cf57" />
+
 ### Problem Formulation
 
 * Input: 21 numerical software code metrics (McCabe and Halstead complexity measures)
