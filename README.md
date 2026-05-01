@@ -56,14 +56,6 @@ After log transformation the distributions
   of 77% no defect and 23% defect.
 <img width="557" height="370" alt="Screenshot 2026-05-01 at 1 21 19 AM" src="https://github.com/user-attachments/assets/2a28441c-f12f-463e-8159-b65169cd9b4b" />
 
-* A correlation matrix was computed to identify relationships between features. 
-  Several features were found to be highly correlated, for example `e` and `t` 
-  are mathematically related (t = e/18), and `n` is derived from `total_Op` and 
-  `total_Opnd`. The features most correlated with the target were `loc` (0.34), 
-  `branchCount` (0.32), and `v(g)` (0.30), suggesting that larger and more complex 
-  modules are more likely to contain defects.
-<img width="657" height="572" alt="Screenshot 2026-05-01 at 1 22 46 AM" src="https://github.com/user-attachments/assets/a31142bd-506b-40ad-b3a2-e2681b51cf57" />
-
 ### Problem Formulation
 
 * Input: 21 numerical software code metrics (McCabe and Halstead complexity measures)
