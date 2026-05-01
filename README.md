@@ -68,7 +68,69 @@ After log transformation the distributions
   `total_Opnd`. The features most correlated with the target were `loc` (0.34), 
   `branchCount` (0.32), and `v(g)` (0.30), suggesting that larger and more complex 
   modules are more likely to contain defects.
-  <img width="657" height="572" alt="Screenshot 2026-05-01 at 1 22 46 AM" src="https://github.com/user-attachments/assets/a31142bd-506b-40ad-b3a2-e2681b51cf57" />
+<img width="657" height="572" alt="Screenshot 2026-05-01 at 1 22 46 AM" src="https://github.com/user-attachments/assets/a31142bd-506b-40ad-b3a2-e2681b51cf57" />
+### Problem Formulation
 
+* Input: 21 numerical software code metrics (McCabe and Halstead complexity measures)
+* Output: Binary prediction of whether a module contains a defect (0 = no defect, 1 = defect)
+
+* Models:
+  * **Logistic Regression** — chosen as a simple baseline model. Benefits  
+    from log transformation and StandardScaler. Handles class imbalance via 
+    `class_weight="balanced"`.
+  * **Random Forest** — chosen because it handles outliers and skewed data  
+    and generally performs well on tabular data. Handles class imbalance via 
+    `class_weight="balanced"`.
+  * **XGBoost** — chosen because boosted decision trees are considered the preferred 
+    algorithm for tabular data and a lot of other Kaggle submissions utilized it. Handles class imbalance via `scale_pos_weight`.
+
+* Hyperparameters:
+  * Logistic Regression: `max_iter=1000`, `class_weight="balanced"`
+  * Random Forest: `n_estimators=100`, `class_weight="balanced"`
+  * XGBoost: `n_estimators=100`, `scale_pos_weight=3.41`, `eval_metric="logloss"`
+### Training
+
+* All models were trained on a personal MacBook using Python and Jupyter Notebook.
+* The following packages were used: pandas, numpy, matplotlib, scikit-learn, and xgboost.
+* Training times were fast; Logistic Regression and XGBoost trained in seconds, 
+  Random Forest took slightly longer due to building 100 decision trees.
+* These models do not have traditional training curves (loss vs epoch) since they 
+  are not neural networks
+* Training was stopped automatically when the models converged. For Logistic 
+  Regression, `max_iter=1000` was set to ensure convergence.
+* The main difficulty encountered was installing XGBoost on MacOS, which required 
+  installing the OpenMP runtime library via `brew install libomp` before the 
+  package could be imported successfully. Even that was pretty straight forward.
+### Performance Comparison
+
+* The key performance metrics used are:
+  * **ROC AUC** — the primary Kaggle competition metric. Measures the model's 
+    ability to distinguish between defect and no defect across all thresholds. 
+    A score of 1.0 is perfect, 0.5 is random guessing.
+  * **Recall (defect class)** — measures how many actual defects the model caught. 
+    This is important because missing a real bug is worse than a false alarm.
+  * **F1 Score (defect class)** — balances precision and recall for the defect class.
+
+* Results sliced test set:
+
+<img width="446" height="504" alt="Screenshot 2026-05-01 at 1 32 19 AM" src="https://github.com/user-attachments/assets/74a550cc-d511-4b7a-b212-53a27c85805d" />
+
+
+* ROC curves were plotted for all three models showing Logistic Regression 
+  achieving the highest AUC of 0.7827, closely followed by XGBoost at 0.7703.
+<img width="658" height="519" alt="Screenshot 2026-05-01 at 1 32 46 AM" src="https://github.com/user-attachments/assets/36b11d42-9467-44f5-a902-711d336099e8" />
+### Conclusions
+
+* Logistic Regression was the best model with an AUC of 0.7827 and defect 
+  recall of 0.68, making it the most suitable for this task.
+* Random Forest had the highest accuracy (0.81) but worst defect recall (0.35), 
+  showing that accuracy is a misleading metric when classes are imbalanced.
+* Log transformation significantly improved model performance by reducing skew 
+  and compressing extreme outlier values.
+* Several features are mathematically derived from others, meaning the dataset 
+  contains redundant information that could be removed.
+
+
+  
 
   
