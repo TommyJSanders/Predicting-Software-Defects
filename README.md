@@ -9,9 +9,7 @@ Kaggle challenge.
 The task, as defined by the Kaggle challenge, is to use 21 software code metrics 
 to predict whether a C program module contains a defect or not. The features are 
 derived from McCabe and Halstead complexity measures, which capture properties like 
-cyclomatic complexity, lines of code, and estimated programming effort.
-
-I approach the problem as a binary classification 
+cyclomatic complexity, lines of code, and estimated programming effort. I approach the problem as a binary classification 
 task. I applied log transformation and StandardScaler to preprocess the data, and 
 compared the performance of three models: Logistic Regression, Random Forest, and 
 XGBoost. Class imbalance (77% no defect, 23% defect) was handled through class 
