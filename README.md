@@ -142,15 +142,10 @@ After log transformation the distributions
 ### Overview of files in repository
 
 * defects.project.ipynb: Complete end-to-end analysis. Loads data → EDA (correlations, histograms) → preprocess (log1p+StandardScaler) → trains Logistic Regression/Random Forest/XGBoost → evaluates F1/AUC/ROC → generates Kaggle submission.csv
-
 * train.csv: Training data (101,763 modules × 21 numeric code metrics + defects target 0/1)
-
 * test.csv: Test data for Kaggle submission (67,856 modules × id + 21 features)
-
 * submission.csv: Generated predictions (id + defects probabilities)
-
 * README.md: Project overview, reproduction instructions, results summary
-
 * Note: Single notebook is fully self-contained with markdown explanations, plots, and results for complete understanding without external docs.
 
 ### Software Setup
