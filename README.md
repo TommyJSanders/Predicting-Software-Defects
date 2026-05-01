@@ -146,7 +146,6 @@ After log transformation the distributions
 * Train: Logistic/LR, Random Forest, XGBoost (60/20/20 split)
 * Evaluate: F1/AUC/ROC curves on val/test sets
 * Generate: submission.csv for Kaggle
-* Resources: Google Colab 
 * Expected: Logistic Regression AUC=0.783 (test set), submission-ready
 
 ### Overview of files in repository
