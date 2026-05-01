@@ -120,6 +120,7 @@ After log transformation the distributions
 * ROC curves were plotted for all three models showing Logistic Regression 
   achieving the highest AUC of 0.7827, closely followed by XGBoost at 0.7703.
 <img width="658" height="519" alt="Screenshot 2026-05-01 at 1 32 46 AM" src="https://github.com/user-attachments/assets/36b11d42-9467-44f5-a902-711d336099e8" />
+
 ### Conclusions
 
 * Logistic Regression was the best model with an AUC of 0.7827 and defect 
