@@ -13,9 +13,7 @@ cyclomatic complexity, lines of code, and estimated programming effort. I approa
 task. I applied log transformation and StandardScaler to preprocess the data, and 
 compared the performance of three models: Logistic Regression, Random Forest, and 
 XGBoost. Class imbalance (77% no defect, 23% defect) was handled through class 
-weighting parameters in each model.
-
-The best model was Logistic Regression, achieving an AUC of 0.7827 on the held out 
+weighting parameters in each model. The best model was Logistic Regression, achieving an AUC of 0.7827 on the held out 
 test set. At the time of writing, the best performance on Kaggle for this competition 
 is an AUC of approximately 0.79.
 ## Summary of Workdone
