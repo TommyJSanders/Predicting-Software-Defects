@@ -131,6 +131,30 @@ After log transformation the distributions
 * Several features are mathematically derived from others, meaning the dataset 
   contains redundant information that could be removed.
 
+### Future Work
+
+* Remove redundant features that are mathematically derived from others 
+  (`t`, `b`, `n`) and compare performance to see if it improves results.
+* Apply hyperparameter tuning using `GridSearchCV` or `RandomizedSearchCV` 
+  to find optimal model parameters.
+* Experiment with feature engineering, such as creating ratios between 
+  correlated features.
+* Try more advanced techniques like stacking multiple models 
+  together to improve AUC score closer to the top Kaggle submissions.
+
+### How to Reproduce Results
+
+*Clone repo and open defects.project.ipynb in Jupyter/Colab
+*Run all cells sequentially (~5 mins on CPU):
+*Loads train.csv/test.csv automatically
+*EDA: correlations, histograms, class imbalance plots
+*Preprocess: log1p() + StandardScaler() on 21 features
+*Train: Logistic/LR, Random Forest, XGBoost (60/20/20 split)
+*Evaluate: F1/AUC/ROC curves on val/test sets
+*Generate: submission.csv for Kaggle
+*Resources: Google Colab 
+Expected: Logistic Regression AUC=0.783 (test set), submission-ready
+ 
 
   
 
