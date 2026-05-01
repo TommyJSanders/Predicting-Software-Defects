@@ -183,7 +183,9 @@ After log transformation the distributions
 
 ## Citations
 
-* (https://www.kaggle.com/competitions/playground-series-s3e23) 
+* (https://www.kaggle.com/competitions/playground-series-s3e23)
+
+* https://xgboost.readthedocs.io/en/latest/python/python_intro.html#install-xgboost
 
 
 
