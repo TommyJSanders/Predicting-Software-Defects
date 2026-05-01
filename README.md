@@ -128,7 +128,7 @@ After log transformation the distributions
 ### Future Work
 
 * Remove redundant features that are mathematically derived from others 
-  (`t`, `b`, `n`) and compare performance to see if it improves results.
+  (BranchCount, total_Op, total_Opnd, v(g)) and compare performance to see if it improves results.
 * Apply hyperparameter tuning using `GridSearchCV` or `RandomizedSearchCV` 
   to find optimal model parameters.
 * Experiment with feature engineering, such as creating ratios between 
