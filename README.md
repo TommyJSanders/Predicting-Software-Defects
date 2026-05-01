@@ -1,4 +1,4 @@
-# Software Defect Detection: A Binary Classification
+# Software Defect Detection: A Binary Classification Problem
 
 This repository holds an attempt to apply Logistic Regression, Random Forest, 
 and XGBoost to predict software defects using data from the 
@@ -52,4 +52,10 @@ is an AUC of approximately 0.79.
 <img width="659" height="574" alt="Screenshot 2026-05-01 at 1 17 35 AM" src="https://github.com/user-attachments/assets/bdbdfb4d-926c-454e-9bcd-35488e14b1d9" />
 Before transformation, most features showed a single spike near zero with a long 
   right tail due to extreme outliers.
+
+<img width="660" height="590" alt="Screenshot 2026-05-01 at 1 19 44 AM" src="https://github.com/user-attachments/assets/2a528d8e-f0b8-46d9-aec4-f1124e57669f" />
+After log transformation the distributions 
+  became much more spread out and readable, clearly showing differences between 
+  the two classes for many features.
+
   
