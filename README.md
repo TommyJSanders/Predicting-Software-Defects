@@ -43,6 +43,7 @@ is an AUC of approximately 0.79.
 * A histogram grid was plotted comparing the distribution of each feature between 
   the two classes (defect vs no defect) before and after log transformation. 
 <img width="659" height="574" alt="Screenshot 2026-05-01 at 1 17 35 AM" src="https://github.com/user-attachments/assets/bdbdfb4d-926c-454e-9bcd-35488e14b1d9" />
+
 Before transformation, most features showed a single spike near zero with a long 
   right tail due to extreme outliers.
 
