@@ -25,7 +25,7 @@ is an AUC of approximately 0.79.
     * Validation (20%): 20,353 data points
     * Test (20%): 20,353 data points
     * Kaggle Test: 67,856 data points (no labels, used for submission)
- #### Preprocessing / Clean up
+  #### Preprocessing / Clean up
 
 * All 21 features are numerical, so no one-hot encoding was needed.
 * No missing values were found in the dataset.
